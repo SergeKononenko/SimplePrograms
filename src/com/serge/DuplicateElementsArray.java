@@ -17,6 +17,7 @@ public class DuplicateElementsArray {
 
 	public static void main(String[] args) {
 
+		String[] arr = {"cat", "dog", "cat"};
 		ArrayList<String> list = new ArrayList<String>();
 
 		// Form a list of numbers from 0-9.
@@ -29,8 +30,11 @@ public class DuplicateElementsArray {
 			list.add(String.valueOf(i));
 		}
 
-		System.out.println("Input list : " + list);
-		System.out.println("\nFiltered duplicates : " + findDuplicates(list));
+		System.out.println("Input list1 : " + list);
+		System.out.println("\nFiltered duplicates1 : " + findDuplicates(list));
+		System.out.print("\nInput list2 : ");
+		printArray(arr);
+		System.out.println("\n\nFiltered duplicates2 : " + findDuplicatesInArr(arr));
 	}
 
 	public static Set<String> findDuplicates(List<String> listContainingDuplicates) {
@@ -45,4 +49,37 @@ public class DuplicateElementsArray {
 		}
 		return resultSet;
 	}
+	
+	public static ArrayList<String> findDuplicatesInArr(String[] arrayContainingDuplicates) {
+
+		ArrayList<String> resultSet = new ArrayList<String>(); 
+		
+		for (int i = 0; i<arrayContainingDuplicates.length; i++) {
+			for(int j = i+1; j<arrayContainingDuplicates.length; j++) {
+				if(arrayContainingDuplicates[i].equals(arrayContainingDuplicates[j]))
+					resultSet.add(arrayContainingDuplicates[i]);
+			}
+		}
+		
+		return resultSet;
+	}
+	
+	public static void printArray(String[] arr) {
+		for(String str : arr)
+		System.out.print( str + ", ");
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
