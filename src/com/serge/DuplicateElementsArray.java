@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-
-
-
 /*
  * Write Code To Filter Duplicate Elements From An Array And Print As A List?
  * 
@@ -31,13 +27,13 @@ public class DuplicateElementsArray {
 		}
 
 		System.out.println("Input list1 : " + list);
-		System.out.println("\nFiltered duplicates1 : " + findDuplicates(list));
+		System.out.println("\nFiltered duplicates by HashSet : " + findDuplicatesHashSet(list));
 		System.out.print("\nInput list2 : ");
 		printArray(arr);
-		System.out.println("\n\nFiltered duplicates2 : " + findDuplicatesInArr(arr));
+		System.out.println("\n\nFiltered duplicates manually : " + findDuplicatesInArr(arr));
 	}
 
-	public static Set<String> findDuplicates(List<String> listContainingDuplicates) {
+	public static Set<String> findDuplicatesHashSet(List<String> listContainingDuplicates) { // Using HashSet
 
 		 Set<String> resultSet = new HashSet<String>(); // Using HashSet because it does not contain duplicates, order is not important
 		 Set<String> tempSet = new HashSet<String>();
@@ -60,7 +56,6 @@ public class DuplicateElementsArray {
 					resultSet.add(arrayContainingDuplicates[i]);
 			}
 		}
-		
 		return resultSet;
 	}
 	
